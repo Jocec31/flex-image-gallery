@@ -1,0 +1,43 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 140px 0;
+  padding: 2rem;
+  background-color: #333;
+}
+
+.gallery {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  /* 2% du côté le plus petit pour la gap */
+  gap: 2vmin;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 14px 14px;
+  outline: 2px solid white;
+}
+
+.gallery li {
+  height: 250px;
+  /* le li prend l'espace restant */
+  flex-grow: 1;
+  outline: 1px solid white;
+}
+.gallery img {
+  /* on demande à l'image de prendre tout l'espace dans son parent li */
+  /* par défaut le navigateur va chercher à établir une proportion par rappport
+  à la hauteur définie et connue du parent soit 250px. La li prendra donc
+  une width calculée à partir de la height. Le flex-grow vient agir sur la width
+  de la li et la fait s'aggrandir. La width 100% de l'image viendra donc combler 
+  le vide et avec object-fit on garde une image propre et noin déformée */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
