@@ -23,6 +23,14 @@ body {
   padding: 14px 14px;
   outline: 2px solid white;
 }
+/* dans le cas où il y aurait juste une photo sur la dernière rangée 
+et pour éviter qu'elle prenne toute la largeur (cela créerait un visuel 
+pas très beau) on rajoute un ::after pour laisser un espace vide */
+/* .gallery::after {
+  content: "";
+  display: block;
+  flex-grow: 10;
+} */
 
 .gallery li {
   height: 250px;
